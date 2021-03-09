@@ -10,12 +10,12 @@
 define( "ASSETS", get_template_directory_uri() . "/assets" );
 
 ### Configuração do tema
-function magnorionConfig()
+function aquaSeedThemeConfig()
 {
     add_theme_support( "post-thumbnails" );
     add_theme_support( "menus" );
 }
-add_action("after_setup_theme", "magnorionConfig");
+add_action("after_setup_theme", "aquaSeedThemeConfig");
 
 ### Assets do tema
 function assetsSite()
