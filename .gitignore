@@ -1,0 +1,5 @@
+assets/vendor/**/
+node_modules
+vendor/
+assets/dist
+package-lock.json

@@ -1,26 +1,20 @@
 {
-  "name": "magnorion",
+  "name": "aqua-seed-theme",
   "version": "1.0.0",
-  "description": "My portfolio",
+  "description": "Wordpress theme",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --watch",
     "prod": "webpack"
   },
-  "repository": "git+ssh://git@github.com/magnorion/magnorion.git",
   "keywords": [
     "project"
   ],
-  "author": "Magnorion",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/magnorion/magnorion/issues"
-  },
-  "homepage": "https://github.com/magnorion/magnorion#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1"
+    "bootstrap": "4.6.0",
+    "font-awesome": "4.7.0",
+    "jquery": "3.6.0"
   },
   "devDependencies": {
     "css-loader": "^3.5.2",
