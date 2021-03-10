@@ -10,10 +10,14 @@
 <section id="single-content" class="container container-holder">
     <div class="d-flex justify-content-around align-items-start">
         <article class="col-md-8">
-            <?php while (have_posts()) {
-                the_post();
-                the_content();
-            } ?>
+            <?php while(have_posts()) : the_post(); ?>
+            <h1> 
+                <a href="<?= get_the_permalink() ?>">
+                    <?= the_title(); ?>
+                </a> 
+            </h1>
+            <p> <?= the_excerpt(); ?> </p>
+            <?php endwhile; ?>
         </article>
         <aside class="col-md-4 pull-right">
             <h3> Categorias </h3>

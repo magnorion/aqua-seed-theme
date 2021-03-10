@@ -4,8 +4,8 @@
   "description": "Wordpress theme",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --watch",
-    "prod": "webpack"
+    "start": "webpack --watch",
+    "start:prod": "webpack"
   },
   "keywords": [
     "project"
