@@ -1,5 +1,7 @@
 const webpack = require("webpack"),
-  ExtractTextPlugin = require("extract-text-webpack-plugin");
+  ExtractTextPlugin = require("extract-text-webpack-plugin"),
+  path = require('path');
+
 module.exports = {
   entry: __dirname + "/assets/assets.js",
   output: {
@@ -38,5 +40,12 @@ module.exports = {
       jQuery: "jQuery",
       $: "jQuery"
     })
-  ]
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '.'),
+    },
+    compress: true,
+    port: 9000,
+  }
 }
