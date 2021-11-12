@@ -1,9 +1,12 @@
 const webpack = require("webpack"),
-  ExtractTextPlugin = require("extract-text-webpack-plugin");
+  MiniCssExtractPlugin = require("mini-css-extract-plugin"),
+  CssMinimizerPlugin = require("css-minimizer-webpack-plugin"),
+  path = require('path');
+
 module.exports = {
   entry: __dirname + "/assets/assets.js",
   output: {
-    filename: "site-bundle.js",
+    filename: "main.js",
     path: __dirname + "/assets/dist"
   },
   module: {
@@ -20,23 +23,28 @@ module.exports = {
         ]
       },
       {
-        test: /\.(s*)css$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            { loader: "css-loader" },
-            { loader: "sass-loader"}
-          ]
-        })
+        test: /.s?css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
   plugins: [
-    new ExtractTextPlugin("style.css"),
+    new MiniCssExtractPlugin(),
     new webpack.ProvidePlugin({
       jQuery: "jQuery",
       $: "jQuery"
     })
-  ]
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '.'),
+    },
+    compress: true,
+    port: 9000,
+  }
 }
