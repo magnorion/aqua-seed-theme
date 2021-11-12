@@ -20,8 +20,8 @@ add_action("after_setup_theme", "aquaSeedThemeConfig");
 ### Assets do tema
 function assetsSite()
 {
-    wp_enqueue_script( "core",  ASSETS . "/dist/site-bundle.js" );
-    wp_enqueue_style( "styles", ASSETS . "/dist/style.css" );
+    wp_enqueue_script( "core",  ASSETS . "/dist/main.js" );
+    wp_enqueue_style( "styles", ASSETS . "/dist/main.css" );
 
     // Fonts
     wp_enqueue_style( "google-fonts", 
